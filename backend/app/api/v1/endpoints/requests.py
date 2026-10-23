@@ -32,3 +32,5 @@ def create_request(
 @router.get("/", response_model=List[CommunityRequestResponse])
 def list_requests(skip: int = 0, limit: int = 20, db: Session = Depends(get_db)):
     return db.query(CommunityRequest).offset(skip).limit(limit).all()
+
+
