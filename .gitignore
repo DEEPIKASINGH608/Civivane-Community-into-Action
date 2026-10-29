@@ -1,0 +1,55 @@
+# ==========================================
+# Node / Frontend (React + Vite)
+# ==========================================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# Python / Backend (FastAPI)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+venv.bak/
+env.bak/
+
+# SQLite / Local Databases
+*.db
+*.sqlite3
+*.sqlite
+
+# Alembic / Migrations temporary files
+alembic.ini.bak
+
+# ==========================================
+# Environment Variables & Secrets (IMPORTANT)
+# ==========================================
+.env
+**/backend/.env
+.env.local
+.env.*.local
+
+# ==========================================
+# IDEs & System Files
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
