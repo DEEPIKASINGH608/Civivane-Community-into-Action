@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Component to fix grey tile rendering issues on load
 function MapResizer() {
   const map = useMap();
   useEffect(() => {

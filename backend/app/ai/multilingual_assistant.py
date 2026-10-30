@@ -2,7 +2,6 @@ import re
 from typing import Dict, Any
 
 class MultilingualAssistant:
-    # Keyword dictionaries for basic multilingual intent/category routing
     KEYWORD_MAP = {
         "food": ["khana", "bhojan", "ration", "meal", "hunger", "bhookh", "உணவு", "খাবার"],
         "healthcare": ["dawai", "medicine", "doctor", "hospital", "ill", "bimar", "மருத்துவம்", "மருந்து", "স্বাস্থ্য"],

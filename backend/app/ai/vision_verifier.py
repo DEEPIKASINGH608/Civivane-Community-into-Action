@@ -11,12 +11,10 @@ class VisionEvidenceVerifier:
         if img is None:
             return ""
 
-        # Resize to 32x32 and compute DCT
         img_resized = cv2.resize(img, (32, 32), interpolation=cv2.INTER_AREA)
         dct = cv2.dct(np.float32(img_resized))
         dct_low = dct[:8, :8]
 
-        # Compute median and binary hash string
         median = np.median(dct_low)
         hash_bits = (dct_low > median).flatten()
         return "".join(['1' if b else '0' for b in hash_bits])
@@ -30,11 +28,10 @@ class VisionEvidenceVerifier:
         if img is None:
             return {"is_valid": False, "reason": "Invalid image format or unreadable file."}
 
-        # Blur detection via Laplacian variance
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         laplacian_var = cv2.Laplacian(gray, cv2.CV_64F).var()
 
-        is_blurry = laplacian_var < 100.0  # Threshold for acceptable sharpness
+        is_blurry = laplacian_var < 100.0  
         phash_val = VisionEvidenceVerifier.compute_phash(image_bytes)
 
         status = "VERIFIED" if not is_blurry else "NEEDS_REVIEW"

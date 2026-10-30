@@ -11,14 +11,13 @@ class DataCleaningPipeline:
             return ""
         digits = re.sub(r'\D', '', phone)
         if len(digits) == 10:
-            return f"+91{digits}" # Defaulting to India (+91) region or custom format
+            return f"+91{digits}"
         return f"+{digits}" if not phone.startswith('+') else phone
 
     @staticmethod
     def normalize_location(location: str) -> str:
         if not location:
             return "Unknown"
-        # Title case and strip extra whitespaces
         return " ".join(location.strip().title().split())
 
     @staticmethod

@@ -32,7 +32,6 @@ class GeospatialService:
             ORDER BY distance_km ASC;
         """)
 
-        # Fallback query using standard SQLAlchemy execution
         results = db.execute(
             text("""
                 SELECT id, title, description, category, urgency, location_name, latitude, longitude
@@ -48,7 +47,6 @@ class GeospatialService:
             }
         ).fetchall()
 
-        # Simplified response mapping
         return [
             {
                 "id": row[0],
